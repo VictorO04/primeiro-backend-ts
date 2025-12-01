@@ -1,3 +1,4 @@
+import { parse } from "path";
 import * as statusModel from "../models/statusmodel";
 import { Request, Response } from "express";
 
@@ -12,6 +13,26 @@ export const getAllStatus = async (req: Request, res: Response) => {
                 : "Status encontrados",
             status: status
         });
+    } catch (error) {
+        const errorMessage = error instanceof Error ? error.message : "Um erro desconhecido ocorreu.";
+
+        res.status(500).json({
+            mensagem: "Erro interno",
+            detalhes: errorMessage
+        });
+    }
+}
+
+export const getStatusById = async (req: Request, res: Response) => {
+    try {
+        const id = parseInt(req.params.id);
+
+        if (isNaN(id)) {
+            return res.status(400).json({
+                total: 0,
+                mensagem: "O id precisa ser um número"
+            });
+        }
     } catch (error) {
         const errorMessage = error instanceof Error ? error.message : "Um erro desconhecido ocorreu.";
 
