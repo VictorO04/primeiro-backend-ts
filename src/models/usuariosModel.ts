@@ -5,3 +5,9 @@ export const findAllUsuarios = async () => {
         orderBy: { nome: "asc" }
     });
 }
+
+export const findUsuariosById = async (id: number) => {
+    return await prisma.usuarios.findUnique({
+        where: { id: id }
+    });
+}

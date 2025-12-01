@@ -15,5 +15,5 @@ app.get("/", (req, res) => {
 app.use("/usuarios", usuariosRoutes);
 
 app.listen(serverPort, () => {
-    console.log(`http://localhost:${serverPort}`);
+    console.log(`--- http://localhost:${serverPort}`);
 })
