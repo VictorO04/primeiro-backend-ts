@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model usuarios {
+  id    Int    @id @default(autoincrement())
+  nome  String @db.VarChar(100)
+  email String @unique @db.VarChar(255)
+  senha String @db.VarChar(255)
+}
