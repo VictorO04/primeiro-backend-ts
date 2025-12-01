@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.ts",
   "scripts": {
-    "dev": "cls && tsx watch src/server.ts"
+    "dev": "cls && tsx watch src/server.ts",
+    "seed": "cls && tsx ./prisma/seed.ts"
   },
   "keywords": [],
   "author": "",

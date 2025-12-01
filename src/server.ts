@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
-import usuariosRoutes from "./routes/usuariosRoutes.js";
+import usuariosRoutes from "./routes/usuariosRoutes";
 
 const app = express();
 app.use(express.json());
@@ -16,4 +16,4 @@ app.use("/usuarios", usuariosRoutes);
 
 app.listen(serverPort, () => {
     console.log(`--- http://localhost:${serverPort}`);
-})
+});

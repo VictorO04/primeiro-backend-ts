@@ -8,8 +8,13 @@ datasource db {
 }
 
 model usuarios {
-  id    Int    @id @default(autoincrement())
-  nome  String @db.VarChar(100)
-  email String @unique @db.VarChar(255)
-  senha String @db.VarChar(255)
+  id      Int    @id @default(autoincrement())
+  nome    String @db.VarChar(100)
+  email   String @unique @db.VarChar(255)
+  senha   String @db.VarChar(255)
+}
+
+model status {
+  id      Int    @id @default(autoincrement())
+  status  String @db.VarChar(7)
 }
