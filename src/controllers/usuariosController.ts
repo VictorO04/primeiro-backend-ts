@@ -1,4 +1,4 @@
-import * as usuariosModel from "../models/usuariosModel";
+import * as usuariosModel from "../models/usuariosModel.js";
 import { Request, Response } from "express";
 
 export const getAllUsuarios = async (req: Request, res: Response) => {
